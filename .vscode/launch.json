@@ -1,0 +1,37 @@
+\
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Client: Debug in Chrome (Vite)",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/client/src",
+      "preLaunchTask": "client: dev"
+    },
+    {
+      "name": "Server: Debug (ASP.NET Core)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "server: build",
+      "program": "${workspaceFolder}/server/src/ServiceDesk.Api/bin/Debug/net8.0/ServiceDesk.Api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/server/src/ServiceDesk.Api",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Fullstack: Client + Server",
+      "configurations": ["Server: Debug (ASP.NET Core)", "Client: Debug in Chrome (Vite)"]
+    }
+  ]
+}

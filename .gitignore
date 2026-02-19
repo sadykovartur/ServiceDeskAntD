@@ -1,0 +1,19 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+
+# Node
+client/node_modules
+client/dist
+client/.env
+
+# Dotnet
+**/bin/
+**/obj/
+**/.vs/
+**/*.user
+**/*.suo

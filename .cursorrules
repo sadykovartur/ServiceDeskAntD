@@ -1,0 +1,27 @@
+# Cursor AI — правила проекта (Service Desk)
+
+## Язык
+- Ответы и комментарии в коде — на русском (кроме имён классов/переменных).
+
+## Стек и ограничения
+- Клиент: Vite + React + TypeScript + Ant Design + React Router + TanStack Query (c ЛР4).
+- Сервер: ASP.NET Core Web API + EF Core + PostgreSQL + Identity + JWT.
+- TargetFramework: net8.0
+
+## Стиль работы
+- Предпочитай небольшие, проверяемые изменения (small diffs).
+- Всегда учитывай UI состояния: loading / empty / error.
+- Для API ошибок используй ProblemDetails (400/401/403/404).
+- DTO отделяй от Entity. Не протаскивай EF-сущности наружу.
+
+## Архитектура (сервер)
+- Слои: Domain / Application / Infrastructure / Api.
+
+## Архитектура (клиент)
+- src/app: роутинг, layout, провайдеры
+- src/pages: страницы
+- src/shared: общие компоненты/утилиты
+
+## Тесты/качество
+- Client: eslint + prettier обязаны проходить.
+- Server: интеграционные тесты (ЛР8 минимум).
